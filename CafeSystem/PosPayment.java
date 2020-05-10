@@ -5,17 +5,19 @@
  */
 package CafeSystem;
 
+import Interfaces.IDao;
+
 /**
  *
  * @author yaseminturhan
  */
-public class PosPayment extends CalculateBilling{
+public class PosPayment extends CalculateBilling implements IDao{
     
-    public PosPayment(){
+    public PosPayment(double taxpercent, double total){
         this.taxpercent = taxpercent;
         this.total = total; 
+        
     }
-    
     
     
 }

@@ -82,16 +82,15 @@ public class SeatSelected extends javax.swing.JFrame {
         jSpinner16 = new javax.swing.JSpinner();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableOrder = new javax.swing.JTable();
-        firstTable = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        secondTable = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
         addButton = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
         seating.setBackground(new java.awt.Color(0, 102, 102));
 
@@ -349,11 +348,11 @@ public class SeatSelected extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Table No", "Item", "Price"
+                "Item", "Price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Float.class
+                java.lang.String.class, java.lang.Float.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -361,10 +360,6 @@ public class SeatSelected extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tableOrder);
-
-        firstTable.setText("First Table");
-
-        secondTable.setText("Second Table");
 
         addButton.setText("ADD");
         addButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -385,29 +380,15 @@ public class SeatSelected extends javax.swing.JFrame {
         seatingLayout.setHorizontalGroup(
             seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(seatingLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(95, Short.MAX_VALUE)
                 .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
-                        .addComponent(jCheckBox2)
-                        .addGap(33, 33, 33)
-                        .addComponent(seat4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(firstTable)
-                        .addComponent(seat1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(seat4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seat1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(46, 46, 46)
                 .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(seatingLayout.createSequentialGroup()
-                        .addComponent(jCheckBox4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(seat5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(secondTable)
-                        .addComponent(seat2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
-                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(seat5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seat2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
                 .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(seat3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(seat6, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -427,26 +408,12 @@ public class SeatSelected extends javax.swing.JFrame {
             seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(firstTable, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(secondTable, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(18, 18, 18)
                 .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
-                            .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(seatingLayout.createSequentialGroup()
-                                    .addComponent(seat2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(32, 32, 32))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, seatingLayout.createSequentialGroup()
-                                    .addGap(46, 46, 46)
-                                    .addComponent(jCheckBox5)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                            .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(seat5, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
-                                    .addComponent(jCheckBox6)
-                                    .addGap(58, 58, 58))))
+                            .addComponent(seat2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(32, 32, 32)
+                            .addComponent(seat5, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(seatingLayout.createSequentialGroup()
                             .addComponent(seat3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(32, 32, 32)
@@ -454,14 +421,7 @@ public class SeatSelected extends javax.swing.JFrame {
                     .addGroup(seatingLayout.createSequentialGroup()
                         .addComponent(seat1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(seat4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
-                                .addComponent(jCheckBox2)
-                                .addGap(48, 48, 48))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
-                                .addComponent(jCheckBox4)
-                                .addGap(58, 58, 58)))))
+                        .addComponent(seat4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(43, 43, 43))
             .addGroup(seatingLayout.createSequentialGroup()
                 .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -505,6 +465,40 @@ public class SeatSelected extends javax.swing.JFrame {
         a.setBackground(Color.red);
         else
         a.setBackground(Color.WHITE);
+        teaCheck.setEnabled(true);  
+        cokeCheck.setEnabled(true);  
+        juiceCheck.setEnabled(true);
+        filterCheck.setEnabled(true); 
+        espressoCheck.setEnabled(true); 
+        icedCheck.setEnabled(true); 
+        jSpinner1.setEnabled(true); 
+        jSpinner2.setEnabled(true); 
+        jSpinner3.setEnabled(true);
+        jSpinner4.setEnabled(true); 
+        jSpinner5.setEnabled(true); 
+        jSpinner6.setEnabled(true); 
+        mantıCheck.setEnabled(true); 
+        kebabCheck.setEnabled(true); 
+        donerCheck.setEnabled(true);
+        saladCheck.setEnabled(true); 
+        lambCheck.setEnabled(true); 
+        jSpinner7.setEnabled(true); 
+        jSpinner8.setEnabled(true); 
+        jSpinner9.setEnabled(true);
+        jSpinner10.setEnabled(true);
+        jSpinner11.setEnabled(true); 
+        steakCheck.setEnabled(true);
+        schnitzelCheck.setEnabled(true); 
+        burgerCheck.setEnabled(true); 
+        doubleCheck.setEnabled(true); 
+        hotdogCheck.setEnabled(true); 
+        jSpinner12.setEnabled(true); 
+        jSpinner13.setEnabled(true);
+        jSpinner14.setEnabled(true);
+        jSpinner15.setEnabled(true); 
+        jSpinner16.setEnabled(true);
+        addButton.setEnabled(true); 
+        jButton2.setEnabled(true); 
     }//GEN-LAST:event_seat6MouseClicked
 
     private void seat4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seat4MouseClicked
@@ -516,6 +510,40 @@ public class SeatSelected extends javax.swing.JFrame {
         a.setBackground(Color.red);
         else
         a.setBackground(Color.WHITE);
+        teaCheck.setEnabled(true);  
+        cokeCheck.setEnabled(true);  
+        juiceCheck.setEnabled(true);
+        filterCheck.setEnabled(true); 
+        espressoCheck.setEnabled(true); 
+        icedCheck.setEnabled(true); 
+        jSpinner1.setEnabled(true); 
+        jSpinner2.setEnabled(true); 
+        jSpinner3.setEnabled(true);
+        jSpinner4.setEnabled(true); 
+        jSpinner5.setEnabled(true); 
+        jSpinner6.setEnabled(true); 
+        mantıCheck.setEnabled(true); 
+        kebabCheck.setEnabled(true); 
+        donerCheck.setEnabled(true);
+        saladCheck.setEnabled(true); 
+        lambCheck.setEnabled(true); 
+        jSpinner7.setEnabled(true); 
+        jSpinner8.setEnabled(true); 
+        jSpinner9.setEnabled(true);
+        jSpinner10.setEnabled(true);
+        jSpinner11.setEnabled(true); 
+        steakCheck.setEnabled(true);
+        schnitzelCheck.setEnabled(true); 
+        burgerCheck.setEnabled(true); 
+        doubleCheck.setEnabled(true); 
+        hotdogCheck.setEnabled(true); 
+        jSpinner12.setEnabled(true); 
+        jSpinner13.setEnabled(true);
+        jSpinner14.setEnabled(true);
+        jSpinner15.setEnabled(true); 
+        jSpinner16.setEnabled(true);
+        addButton.setEnabled(true); 
+        jButton2.setEnabled(true); 
     }//GEN-LAST:event_seat4MouseClicked
 
     private void seat1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seat1MouseClicked
@@ -527,13 +555,40 @@ public class SeatSelected extends javax.swing.JFrame {
         a.setBackground(Color.red);
         else
         a.setBackground(Color.WHITE);
-        
-        
-        
-        
-    
-        
-        
+        teaCheck.setEnabled(true);  
+        cokeCheck.setEnabled(true);  
+        juiceCheck.setEnabled(true);
+        filterCheck.setEnabled(true); 
+        espressoCheck.setEnabled(true); 
+        icedCheck.setEnabled(true); 
+        jSpinner1.setEnabled(true); 
+        jSpinner2.setEnabled(true); 
+        jSpinner3.setEnabled(true);
+        jSpinner4.setEnabled(true); 
+        jSpinner5.setEnabled(true); 
+        jSpinner6.setEnabled(true); 
+        mantıCheck.setEnabled(true); 
+        kebabCheck.setEnabled(true); 
+        donerCheck.setEnabled(true);
+        saladCheck.setEnabled(true); 
+        lambCheck.setEnabled(true); 
+        jSpinner7.setEnabled(true); 
+        jSpinner8.setEnabled(true); 
+        jSpinner9.setEnabled(true);
+        jSpinner10.setEnabled(true);
+        jSpinner11.setEnabled(true); 
+        steakCheck.setEnabled(true);
+        schnitzelCheck.setEnabled(true); 
+        burgerCheck.setEnabled(true); 
+        doubleCheck.setEnabled(true); 
+        hotdogCheck.setEnabled(true); 
+        jSpinner12.setEnabled(true); 
+        jSpinner13.setEnabled(true);
+        jSpinner14.setEnabled(true);
+        jSpinner15.setEnabled(true); 
+        jSpinner16.setEnabled(true);
+        addButton.setEnabled(true); 
+        jButton2.setEnabled(true); 
         
     }//GEN-LAST:event_seat1MouseClicked
 
@@ -546,6 +601,40 @@ public class SeatSelected extends javax.swing.JFrame {
         a.setBackground(Color.red);
         else
         a.setBackground(Color.WHITE);
+        teaCheck.setEnabled(true);  
+        cokeCheck.setEnabled(true);  
+        juiceCheck.setEnabled(true);
+        filterCheck.setEnabled(true); 
+        espressoCheck.setEnabled(true); 
+        icedCheck.setEnabled(true); 
+        jSpinner1.setEnabled(true); 
+        jSpinner2.setEnabled(true); 
+        jSpinner3.setEnabled(true);
+        jSpinner4.setEnabled(true); 
+        jSpinner5.setEnabled(true); 
+        jSpinner6.setEnabled(true); 
+        mantıCheck.setEnabled(true); 
+        kebabCheck.setEnabled(true); 
+        donerCheck.setEnabled(true);
+        saladCheck.setEnabled(true); 
+        lambCheck.setEnabled(true); 
+        jSpinner7.setEnabled(true); 
+        jSpinner8.setEnabled(true); 
+        jSpinner9.setEnabled(true);
+        jSpinner10.setEnabled(true);
+        jSpinner11.setEnabled(true); 
+        steakCheck.setEnabled(true);
+        schnitzelCheck.setEnabled(true); 
+        burgerCheck.setEnabled(true); 
+        doubleCheck.setEnabled(true); 
+        hotdogCheck.setEnabled(true); 
+        jSpinner12.setEnabled(true); 
+        jSpinner13.setEnabled(true);
+        jSpinner14.setEnabled(true);
+        jSpinner15.setEnabled(true); 
+        jSpinner16.setEnabled(true);
+        addButton.setEnabled(true); 
+        jButton2.setEnabled(true); 
     }//GEN-LAST:event_seat5MouseClicked
 
     private void seat3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seat3MouseClicked
@@ -557,13 +646,47 @@ public class SeatSelected extends javax.swing.JFrame {
         a.setBackground(Color.red);
         else
         a.setBackground(Color.WHITE);
+        teaCheck.setEnabled(true);  
+        cokeCheck.setEnabled(true);  
+        juiceCheck.setEnabled(true);
+        filterCheck.setEnabled(true); 
+        espressoCheck.setEnabled(true); 
+        icedCheck.setEnabled(true); 
+        jSpinner1.setEnabled(true); 
+        jSpinner2.setEnabled(true); 
+        jSpinner3.setEnabled(true);
+        jSpinner4.setEnabled(true); 
+        jSpinner5.setEnabled(true); 
+        jSpinner6.setEnabled(true); 
+        mantıCheck.setEnabled(true); 
+        kebabCheck.setEnabled(true); 
+        donerCheck.setEnabled(true);
+        saladCheck.setEnabled(true); 
+        lambCheck.setEnabled(true); 
+        jSpinner7.setEnabled(true); 
+        jSpinner8.setEnabled(true); 
+        jSpinner9.setEnabled(true);
+        jSpinner10.setEnabled(true);
+        jSpinner11.setEnabled(true); 
+        steakCheck.setEnabled(true);
+        schnitzelCheck.setEnabled(true); 
+        burgerCheck.setEnabled(true); 
+        doubleCheck.setEnabled(true); 
+        hotdogCheck.setEnabled(true); 
+        jSpinner12.setEnabled(true); 
+        jSpinner13.setEnabled(true);
+        jSpinner14.setEnabled(true);
+        jSpinner15.setEnabled(true); 
+        jSpinner16.setEnabled(true);
+        addButton.setEnabled(true); 
+        jButton2.setEnabled(true); 
     }//GEN-LAST:event_seat3MouseClicked
 
     private void seat3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seat3MousePressed
 
     }//GEN-LAST:event_seat3MousePressed
 
-    private void seat2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_seat2MouseClicked
+    private void seat2MouseClicked(java.awt.event.MouseEvent evt) {                                   
         int x = seating.getMousePosition().x;
         int y = seating.getMousePosition().y;
         Component a = seating.getComponentAt(x,y);
@@ -572,128 +695,321 @@ public class SeatSelected extends javax.swing.JFrame {
         a.setBackground(Color.red);
         else
         a.setBackground(Color.WHITE);
+        teaCheck.setEnabled(true);  
+        cokeCheck.setEnabled(true);  
+        juiceCheck.setEnabled(true);
+        filterCheck.setEnabled(true); 
+        espressoCheck.setEnabled(true); 
+        icedCheck.setEnabled(true); 
+        jSpinner1.setEnabled(true); 
+        jSpinner2.setEnabled(true); 
+        jSpinner3.setEnabled(true);
+        jSpinner4.setEnabled(true); 
+        jSpinner5.setEnabled(true); 
+        jSpinner6.setEnabled(true); 
+        mantıCheck.setEnabled(true); 
+        kebabCheck.setEnabled(true); 
+        donerCheck.setEnabled(true);
+        saladCheck.setEnabled(true); 
+        lambCheck.setEnabled(true); 
+        jSpinner7.setEnabled(true); 
+        jSpinner8.setEnabled(true); 
+        jSpinner9.setEnabled(true);
+        jSpinner10.setEnabled(true);
+        jSpinner11.setEnabled(true); 
+        steakCheck.setEnabled(true);
+        schnitzelCheck.setEnabled(true); 
+        burgerCheck.setEnabled(true); 
+        doubleCheck.setEnabled(true); 
+        hotdogCheck.setEnabled(true); 
+        jSpinner12.setEnabled(true); 
+        jSpinner13.setEnabled(true);
+        jSpinner14.setEnabled(true);
+        jSpinner15.setEnabled(true); 
+        jSpinner16.setEnabled(true);
+        addButton.setEnabled(true); 
+        jButton2.setEnabled(true); 
 
-        //GEN-LAST:event_Selected
+                                 
 
-    }//GEN-LAST:event_seat2MouseClicked
+    }                                  
     
     
    
     
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         
-              if(teaCheck.isSelected() && firstTable.isSelected()){
+              if(teaCheck.isSelected()){
 
                 q = Integer.parseInt(jSpinner1.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                firstTable.getText(),
+                
                 teaCheck.getText(),
                 q,
             });
                 
-              }
+              } 
               
-            if(cokeCheck.isSelected()&& firstTable.isSelected()){
+            if(cokeCheck.isSelected()){
 
                 q = Integer.parseInt(jSpinner2.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                firstTable.getText(),
                 cokeCheck.getText(),
                 q,
                 
              }); 
                 
-            
+            }
             
              
-            if(juiceCheck.isSelected() && firstTable.isSelected()){
+            if(juiceCheck.isSelected() ){
 
                 q = Integer.parseInt(jSpinner3.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                firstTable.getText(),
+                
                 juiceCheck.getText(),
                 q,
             });
                 
-              }
+            } 
             
-            if(espressoCheck.isSelected() && firstTable.isSelected()){
+            if(espressoCheck.isSelected()){
 
                 q = Integer.parseInt(jSpinner4.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                firstTable.getText(),
+               
                 espressoCheck.getText(),
                 q,
             });
                 
-              }
+            } 
             
-            if(icedCheck.isSelected() && firstTable.isSelected()){
+            if(icedCheck.isSelected()){
 
                 q = Integer.parseInt(jSpinner5.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                firstTable.getText(),
+                
                 icedCheck.getText(),
                 q,
             });
-                
-              }
+
+            }
             
-            if(filterCheck.isSelected() && (firstTable.isSelected() || secondTable.isSelected())){
+            if(filterCheck.isSelected()){
 
                 q = Integer.parseInt(jSpinner6.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
+            
+                model.addRow(new Object[]{
                 
-                if(firstTable.isSelected()){
-                   model.addRow(new Object[]{
                 
-                 
-                firstTable.getText(),
                 filterCheck.getText(),
-                q, 
-                    
-                });
-                
-              
+                q,
+            });
+
             }
             
+            if(mantıCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner7.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
             
+                model.addRow(new Object[]{
                 
-               
                 
+                mantıCheck.getText(),
+                q,
+            });
+
             
+            }
+            if(kebabCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner8.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
+            
+                model.addRow(new Object[]{
                 
+                
+                kebabCheck.getText(),
+                q,
+            });
+
+            }
             
+            if(donerCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner9.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
             
+                model.addRow(new Object[]{
+                
+                
+                donerCheck.getText(),
+                q,
+            });
+
+            }
             
+             if(saladCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner10.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
             
-            
+                model.addRow(new Object[]{
+                
+                
+                saladCheck.getText(),
+                q,
+            });
+
+             }
              
              
+            if(lambCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner11.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
+            
+                model.addRow(new Object[]{
+                
+                
+                lambCheck.getText(),
+                q,
+            });
+
+            }
+             
+            if(steakCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner12.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
+            
+                model.addRow(new Object[]{
+                
+                
+                steakCheck.getText(),
+                q,
+            });
+
+            }
+            
+            if(schnitzelCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner13.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
+            
+                model.addRow(new Object[]{
+                
+                
+                schnitzelCheck.getText(),
+                q,
+            });
+
+            
+            }
+            if(burgerCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner14.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
+            
+                model.addRow(new Object[]{
+                
+                
+                burgerCheck.getText(),
+                q,
+            });
+
+            }
+            
+            if(doubleCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner15.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
+            
+                model.addRow(new Object[]{
+                
+                
+                doubleCheck.getText(),
+                q,
+            });
+
+            }
+            
+            if(hotdogCheck.isSelected()){
+
+                q = Integer.parseInt(jSpinner16.getValue().toString());
+                model = (DefaultTableModel)tableOrder.getModel();
+            
+                model.addRow(new Object[]{
+                
+                
+                hotdogCheck.getText(),
+                q,
+            });
+
+            }
+            
               
-                    
-        }}
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseClicked
         
              
     }//GEN-LAST:event_addButtonMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+
+        teaCheck.setEnabled(false);  
+        cokeCheck.setEnabled(false);  
+        juiceCheck.setEnabled(false);
+        filterCheck.setEnabled(false); 
+        espressoCheck.setEnabled(false); 
+        icedCheck.setEnabled(false); 
+        jSpinner1.setEnabled(false); 
+        jSpinner2.setEnabled(false); 
+        jSpinner3.setEnabled(false);
+        jSpinner4.setEnabled(false); 
+        jSpinner5.setEnabled(false); 
+        jSpinner6.setEnabled(false); 
+        mantıCheck.setEnabled(false); 
+        kebabCheck.setEnabled(false); 
+        donerCheck.setEnabled(false);
+        saladCheck.setEnabled(false); 
+        lambCheck.setEnabled(false); 
+        jSpinner7.setEnabled(false); 
+        jSpinner8.setEnabled(false); 
+        jSpinner9.setEnabled(false);
+        jSpinner10.setEnabled(false);
+        jSpinner11.setEnabled(false); 
+        steakCheck.setEnabled(false);
+        schnitzelCheck.setEnabled(false); 
+        burgerCheck.setEnabled(false); 
+        doubleCheck.setEnabled(false); 
+        hotdogCheck.setEnabled(false); 
+        jSpinner12.setEnabled(false); 
+        jSpinner13.setEnabled(false);
+        jSpinner14.setEnabled(false);
+        jSpinner15.setEnabled(false); 
+        jSpinner16.setEnabled(false);
+        addButton.setEnabled(false); 
+        jButton2.setEnabled(false); 
+    }//GEN-LAST:event_formWindowActivated
         
    
     /**
@@ -739,14 +1055,9 @@ public class SeatSelected extends javax.swing.JFrame {
     private javax.swing.JCheckBox doubleCheck;
     private javax.swing.JCheckBox espressoCheck;
     private javax.swing.JCheckBox filterCheck;
-    private javax.swing.JCheckBox firstTable;
     private javax.swing.JCheckBox hotdogCheck;
     private javax.swing.JCheckBox icedCheck;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
@@ -780,7 +1091,6 @@ public class SeatSelected extends javax.swing.JFrame {
     private javax.swing.JLabel seat5;
     private javax.swing.JLabel seat6;
     private javax.swing.JPanel seating;
-    private javax.swing.JCheckBox secondTable;
     private javax.swing.JCheckBox steakCheck;
     private javax.swing.JTable tableOrder;
     private javax.swing.JCheckBox teaCheck;
