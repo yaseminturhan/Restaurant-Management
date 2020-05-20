@@ -92,6 +92,8 @@ public class SeatSelected extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        seatcombo = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -170,6 +172,11 @@ public class SeatSelected extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(238, 234, 234));
 
         teaCheck.setText("Tea");
+        teaCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                teaCheckActionPerformed(evt);
+            }
+        });
 
         cokeCheck.setText("Coke");
 
@@ -360,11 +367,11 @@ public class SeatSelected extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Item", "Price"
+                "Table", "Item", "Price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Float.class
+                java.lang.String.class, java.lang.String.class, java.lang.Float.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -373,7 +380,7 @@ public class SeatSelected extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tableOrder);
 
-        addButton.setBackground(new java.awt.Color(0, 102, 102));
+        addButton.setBackground(new java.awt.Color(238, 234, 234));
         addButton.setText("ADD");
         addButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         addButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -387,7 +394,7 @@ public class SeatSelected extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(0, 102, 102));
+        jButton2.setBackground(new java.awt.Color(238, 234, 234));
         jButton2.setText("REMOVE");
         jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -396,7 +403,7 @@ public class SeatSelected extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 102));
+        jButton1.setBackground(new java.awt.Color(238, 234, 234));
         jButton1.setText("BACK");
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -414,24 +421,42 @@ public class SeatSelected extends javax.swing.JFrame {
             }
         });
 
+        seatcombo.setBackground(new java.awt.Color(148, 121, 82));
+        seatcombo.setForeground(new java.awt.Color(148, 121, 82));
+        seatcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
+        seatcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seatcomboActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setBackground(new java.awt.Color(148, 121, 82));
+        jLabel4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(148, 121, 82));
+        jLabel4.setText("TABLE");
+
         javax.swing.GroupLayout seatingLayout = new javax.swing.GroupLayout(seating);
         seating.setLayout(seatingLayout);
         seatingLayout.setHorizontalGroup(
             seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(seatingLayout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addGap(29, 29, 29)
                 .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(seat4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seat1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(seat4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(seat1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(46, 46, 46)
-                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(seat5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(seat2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(seatcombo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(seat5, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(seat2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(50, 50, 50)
-                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(seat3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(seat6, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(seatingLayout.createSequentialGroup()
@@ -454,39 +479,43 @@ public class SeatSelected extends javax.swing.JFrame {
         );
         seatingLayout.setVerticalGroup(
             seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
-                            .addComponent(seat2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(32, 32, 32)
-                            .addComponent(seat5, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(seatingLayout.createSequentialGroup()
-                            .addComponent(seat3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(32, 32, 32)
-                            .addComponent(seat6, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(seatingLayout.createSequentialGroup()
+                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(seatingLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(seatingLayout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(seatingLayout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(seatcombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, seatingLayout.createSequentialGroup()
+                                .addComponent(seat2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(seat5, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(seatingLayout.createSequentialGroup()
+                                .addComponent(seat3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(seat6, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(seatingLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
                         .addComponent(seat1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
                         .addComponent(seat4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(43, 43, 43))
-            .addGroup(seatingLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(seatingLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(seatingLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(54, 54, 54))
-                    .addGroup(seatingLayout.createSequentialGroup()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(26, Short.MAX_VALUE))))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -781,21 +810,22 @@ public class SeatSelected extends javax.swing.JFrame {
 
                                  
 
-    }                                  
+    }  
     
-    
-   
-    
+    Integer tableNo;
+
+  
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         
               if(teaCheck.isSelected()){
-
+                  
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner1.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
-            
+               
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 teaCheck.getText(),
                 q,
             });
@@ -803,12 +833,13 @@ public class SeatSelected extends javax.swing.JFrame {
               } 
               
             if(cokeCheck.isSelected()){
-
+                
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner2.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
-                
+                tableNo,
                 cokeCheck.getText(),
                 q,
                 
@@ -818,13 +849,13 @@ public class SeatSelected extends javax.swing.JFrame {
             
              
             if(juiceCheck.isSelected() ){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner3.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 juiceCheck.getText(),
                 q,
             });
@@ -832,13 +863,14 @@ public class SeatSelected extends javax.swing.JFrame {
             } 
             
             if(espressoCheck.isSelected()){
-
+                
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner4.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-               
+                tableNo,
                 espressoCheck.getText(),
                 q,
             });
@@ -846,13 +878,14 @@ public class SeatSelected extends javax.swing.JFrame {
             } 
             
             if(icedCheck.isSelected()){
-
+                
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner5.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 icedCheck.getText(),
                 q,
             });
@@ -860,13 +893,13 @@ public class SeatSelected extends javax.swing.JFrame {
             }
             
             if(filterCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner6.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 filterCheck.getText(),
                 q,
             });
@@ -874,13 +907,13 @@ public class SeatSelected extends javax.swing.JFrame {
             }
             
             if(mantıCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner7.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 mantıCheck.getText(),
                 q,
             });
@@ -888,13 +921,13 @@ public class SeatSelected extends javax.swing.JFrame {
             
             }
             if(kebabCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner8.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 kebabCheck.getText(),
                 q,
             });
@@ -902,13 +935,13 @@ public class SeatSelected extends javax.swing.JFrame {
             }
             
             if(donerCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner9.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 donerCheck.getText(),
                 q,
             });
@@ -916,13 +949,13 @@ public class SeatSelected extends javax.swing.JFrame {
             }
             
              if(saladCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner10.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 saladCheck.getText(),
                 q,
             });
@@ -931,13 +964,13 @@ public class SeatSelected extends javax.swing.JFrame {
              
              
             if(lambCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner11.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 lambCheck.getText(),
                 q,
             });
@@ -945,13 +978,13 @@ public class SeatSelected extends javax.swing.JFrame {
             }
              
             if(steakCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner12.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 steakCheck.getText(),
                 q,
             });
@@ -959,13 +992,13 @@ public class SeatSelected extends javax.swing.JFrame {
             }
             
             if(schnitzelCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner13.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 schnitzelCheck.getText(),
                 q,
             });
@@ -973,13 +1006,13 @@ public class SeatSelected extends javax.swing.JFrame {
             
             }
             if(burgerCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner14.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 burgerCheck.getText(),
                 q,
             });
@@ -987,13 +1020,13 @@ public class SeatSelected extends javax.swing.JFrame {
             }
             
             if(doubleCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner15.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 doubleCheck.getText(),
                 q,
             });
@@ -1001,13 +1034,13 @@ public class SeatSelected extends javax.swing.JFrame {
             }
             
             if(hotdogCheck.isSelected()){
-
+                tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
                 q = Integer.parseInt(jSpinner16.getValue().toString());
                 model = (DefaultTableModel)tableOrder.getModel();
             
                 model.addRow(new Object[]{
                 
-                
+                tableNo,
                 hotdogCheck.getText(),
                 q,
             });
@@ -1077,6 +1110,16 @@ public class SeatSelected extends javax.swing.JFrame {
         homeVisible.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void teaCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teaCheckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_teaCheckActionPerformed
+    
+    private void seatcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatcomboActionPerformed
+       
+            
+        
+    }//GEN-LAST:event_seatcomboActionPerformed
         
    
     /**
@@ -1129,6 +1172,7 @@ public class SeatSelected extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
@@ -1159,6 +1203,7 @@ public class SeatSelected extends javax.swing.JFrame {
     private javax.swing.JLabel seat4;
     private javax.swing.JLabel seat5;
     private javax.swing.JLabel seat6;
+    private javax.swing.JComboBox<String> seatcombo;
     private javax.swing.JPanel seating;
     private javax.swing.JCheckBox steakCheck;
     private javax.swing.JTable tableOrder;

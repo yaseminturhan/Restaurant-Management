@@ -15,6 +15,9 @@ import java.awt.Toolkit;
 import java.awt.event.*;  
 import java.awt.event.WindowEvent;
 import Home.HomePage;
+import Model.SaveModel;
+import Model.User;
+import javax.swing.JFrame;
 
 
 public class LoginPage extends javax.swing.JFrame {
@@ -236,9 +239,31 @@ public class LoginPage extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jLabel3MouseClicked
-
+    
+    public String getUserName() {
+	return this.username.getText().trim();
+    }
+	
+    public String getPassword() {
+	return String.valueOf(this.pass.getText()).trim();
+    }
     private void signButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signButonActionPerformed
-        String nameuser = username.getText();
+        
+        if(getUserName().equals("yasemin") && getPassword().equals("turhan")) {
+				//AdminPage adminFrame = new AdminPage();
+				//adminFrame.setVisible(true);
+				dispose();
+			} else if(new User().login(getUserName(), getPassword())) {
+				HomePage homePage = new HomePage();
+				dispose();
+				homePage.setVisible(true);
+			} else {
+				JOptionPane.showMessageDialog(new JFrame(), "Username or password is wrong!", "Login Error", JOptionPane.ERROR_MESSAGE);
+			
+                          
+}    
+        
+        /*String nameuser = username.getText();
         String passuser = pass.getText();
         
         if(nameuser.contains("yasemin") && (passuser.contains("turhan"))){
@@ -260,7 +285,7 @@ public class LoginPage extends javax.swing.JFrame {
             username.setText(null);
             pass.setText(null);
             
-        }
+        }*/
         
         
     }//GEN-LAST:event_signButonActionPerformed

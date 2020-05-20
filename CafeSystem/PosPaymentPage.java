@@ -581,6 +581,7 @@ public class PosPaymentPage extends javax.swing.JFrame {
 
     private void cancel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancel2ActionPerformed
         int pin = Integer.parseInt(inputLbl.getText());
+        
         if(pin==3456){
             jLoan.setEnabled(true);
         }else{
@@ -595,6 +596,7 @@ public class PosPaymentPage extends javax.swing.JFrame {
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
          frame = new JFrame("Exit");
+         
 
         if(JOptionPane.showConfirmDialog(frame, "Confirm to exit", "Restaurant Management",
             JOptionPane.YES_NO_OPTION) == JOptionPane.YES_NO_OPTION){
@@ -607,7 +609,7 @@ public class PosPaymentPage extends javax.swing.JFrame {
         timer.getTime();
         SimpleDateFormat timetimer = new SimpleDateFormat("HH:mm:ss");
         timetimer.format(timer.getTime());
-        SimpleDateFormat datetimer = new SimpleDateFormat("dd:MM:yyyy");
+        SimpleDateFormat datetimer = new SimpleDateFormat("dd:MM:yy");
         datetimer.format(timer.getTime());
 
         receiptText.append("Restaurant Management System\n\n" +

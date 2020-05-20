@@ -159,7 +159,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Home/icons8-pos-terminal-70.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon("/Users/yaseminturhan/Downloads/icons8-user-64.png")); // NOI18N
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel7MouseClicked(evt);
@@ -176,7 +176,7 @@ public class HomePage extends javax.swing.JFrame {
         jLabel10.setText("CALCULATE BILLING");
 
         jLabel11.setFont(new java.awt.Font("SansSerif", 1, 13)); // NOI18N
-        jLabel11.setText("PAYMENT");
+        jLabel11.setText("ADD USER");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -195,20 +195,18 @@ public class HomePage extends javax.swing.JFrame {
                                     .addComponent(tableLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(billingLbl)))
                             .addComponent(jLabel8))
-                        .addGap(59, 59, 59)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(131, 131, 131)
+                                .addGap(190, 190, 190)
                                 .addComponent(jLabel9)
                                 .addGap(0, 83, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addGap(59, 59, 59)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7)
                                     .addComponent(orderLbl)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jLabel11)))
-                                .addGap(71, 71, 71))))))
+                                    .addComponent(jLabel11))
+                                .addGap(77, 77, 77))))))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel10)
@@ -225,9 +223,9 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(tableLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(orderLbl))
                 .addGap(14, 14, 14)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel8))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel9))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(billingLbl)
@@ -236,7 +234,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11))
-                .addContainerGap(76, Short.MAX_VALUE))
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -277,8 +275,8 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_orderLblMouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        PosPaymentPage posVisible = new PosPaymentPage();
-        posVisible.setVisible(true);
+        AddUser userVisible = new AddUser();
+        userVisible.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel7MouseClicked
 
