@@ -9,6 +9,7 @@ package Transactions;
 import CafeSystem.PosPaymentPage;
 import CafeSystem.SeatSelected;
 import CafeSystem.TableOrder;
+import CafeSystem.UpdateMenu;
 
 
 import javax.swing.JOptionPane;
@@ -274,8 +275,8 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_billingLblMouseClicked
 
     private void orderLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderLblMouseClicked
-        SeatSelected seatVisible = new SeatSelected();
-        seatVisible.setVisible(true);
+        UpdateMenu updateVisible = new UpdateMenu();
+        updateVisible.setVisible(true);
         dispose();
     }//GEN-LAST:event_orderLblMouseClicked
 

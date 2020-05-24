@@ -25,7 +25,7 @@ public class CafeMenu implements Comparable<CafeMenu>{
     }
 
     
-    public CafeMenu(String id, String type, String drinks){
+    public CafeMenu(String id, String type, String description){
         this.id = id;
         this.type = type;
         this.description = description;
@@ -56,7 +56,7 @@ public class CafeMenu implements Comparable<CafeMenu>{
 
     @Override
     public String toString() {
-        return id + "___" + type + "___" + description;
+        return id + "___" + type + "___" + description + "___";
     }
 
 

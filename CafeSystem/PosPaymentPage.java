@@ -6,7 +6,7 @@
 
 package CafeSystem;
 
-import CafeSystem.TableOrder;
+
 import Transactions.HomePage;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -341,6 +341,7 @@ public class PosPaymentPage extends javax.swing.JFrame {
             }
         });
 
+        receiptText.setBackground(new java.awt.Color(148, 121, 82));
         receiptText.setColumns(20);
         receiptText.setRows(5);
         jScrollPane1.setViewportView(receiptText);

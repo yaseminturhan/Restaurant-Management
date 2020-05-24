@@ -5,6 +5,7 @@
  */
 package CafeSystem;
 
+import Service.OrderService;
 import Transactions.HomePage;
 import java.awt.Color;
 
@@ -28,9 +29,24 @@ public class SeatSelected extends javax.swing.JFrame {
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2-getWidth()/2 , size.height/2-getHeight()/2);
         
+        /*cafeList =  orderService.getAll();
+        Collections.sort(cafeList);
+        String[] userColumnNames = {"Table", "Item", "Price" };
+        DefaultTableModel menuTableModel = (DefaultTableModel)tableOrder.getModel();
+        menuTableModel.setColumnIdentifiers(userColumnNames);
+            
+        for(CafeMenu menu: cafeList){
+            String[] dataRow = {String.valueOf(menu.getId()), menu.getType(), menu.getDescription() };
+            menuTableModel.addRow(dataRow);
         
+        }*/
         
     }
+        
+    /*private OrderService orderService = new OrderService();
+    private Boolean isEdit;
+    private List<CafeMenu> cafeList;
+    private CafeMenu cafe;*/
     
   
     
@@ -173,11 +189,6 @@ public class SeatSelected extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(238, 234, 234));
 
         teaCheck.setText("Tea");
-        teaCheck.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                teaCheckActionPerformed(evt);
-            }
-        });
 
         cokeCheck.setText("Coke");
 
@@ -361,8 +372,9 @@ public class SeatSelected extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        tableOrder.setBackground(new java.awt.Color(238, 234, 234));
+        tableOrder.setBackground(new java.awt.Color(148, 121, 82));
         tableOrder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(238, 234, 234)));
+        tableOrder.setForeground(new java.awt.Color(255, 255, 255));
         tableOrder.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -370,25 +382,12 @@ public class SeatSelected extends javax.swing.JFrame {
             new String [] {
                 "Table", "Item", "Price"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Float.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        ));
         jScrollPane1.setViewportView(tableOrder);
 
         addButton.setBackground(new java.awt.Color(238, 234, 234));
         addButton.setText("ADD");
         addButton.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        addButton.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addButtonMouseClicked(evt);
-            }
-        });
         addButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addButtonActionPerformed(evt);
@@ -425,11 +424,6 @@ public class SeatSelected extends javax.swing.JFrame {
         seatcombo.setBackground(new java.awt.Color(148, 121, 82));
         seatcombo.setForeground(new java.awt.Color(148, 121, 82));
         seatcombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6" }));
-        seatcombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                seatcomboActionPerformed(evt);
-            }
-        });
 
         jLabel4.setBackground(new java.awt.Color(148, 121, 82));
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
@@ -816,10 +810,22 @@ public class SeatSelected extends javax.swing.JFrame {
     }  
     
     Integer tableNo;
-
-  
+     private void fromView(CafeMenu cafe){
+       
+        cafe.setId((seatcombo.getSelectedItem().toString()));
+        cafe.setType(teaCheck.getText());
+        cafe.setType(cokeCheck.getText());
+        cafe.setType(juiceCheck.getText());
+        cafe.setDescription(jSpinner1.getValue().toString());
+        cafe.setDescription(jSpinner2.getValue().toString());
+        cafe.setDescription(jSpinner3.getValue().toString());
+    }
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
         
+           /* cafe = new CafeMenu();
+            fromView(cafe); 
+            orderService.save(cafe);*/
+            
               if(teaCheck.isSelected()){
                   
                 tableNo = Integer.parseInt(seatcombo.getSelectedItem().toString());
@@ -1049,14 +1055,11 @@ public class SeatSelected extends javax.swing.JFrame {
             });
 
             }
+                      
+                      
             
               
     }//GEN-LAST:event_addButtonActionPerformed
-
-    private void addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseClicked
-        
-             
-    }//GEN-LAST:event_addButtonMouseClicked
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
 
@@ -1097,9 +1100,11 @@ public class SeatSelected extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowActivated
 
     private void removeTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeTableActionPerformed
+
        DefaultTableModel model = (DefaultTableModel) tableOrder.getModel();
-       int selectedro= tableOrder.getSelectedRow();
-       model.removeRow(selectedro);
+       int selectedRowIndex = tableOrder.getSelectedRow();
+       //orderService.delete(model.getValueAt(selectedRowIndex, 0).toString());
+       model.removeRow(selectedRowIndex);
     }//GEN-LAST:event_removeTableActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -1113,17 +1118,7 @@ public class SeatSelected extends javax.swing.JFrame {
         homeVisible.setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void teaCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teaCheckActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_teaCheckActionPerformed
-    
-    private void seatcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seatcomboActionPerformed
-       
             
-        
-    }//GEN-LAST:event_seatcomboActionPerformed
-        
    
     /**
      * @param args the command line arguments

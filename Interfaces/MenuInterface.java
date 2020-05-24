@@ -18,4 +18,3 @@ public interface MenuInterface extends CrudInterfaces<CafeMenu> {
     List<CafeMenu> getByDrink(String drinks);
     List<CafeMenu> getByFood(String foods);
 }
- 

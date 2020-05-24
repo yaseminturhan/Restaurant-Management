@@ -10,9 +10,9 @@ package CafeSystem;
  * @author yaseminturhan
  */
 
-import CafeSystem.CafeItems;
+
 import Transactions.HomePage;
-import Interfaces.IDao;
+
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.text.SimpleDateFormat;
@@ -135,7 +135,7 @@ public class TableOrder extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(201, 189, 167));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -181,11 +181,6 @@ public class TableOrder extends javax.swing.JFrame {
         jCheckBox1.setText("Coke");
 
         jCheckBox2.setText("Tea");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
 
         jCheckBox4.setText("Juice");
 
@@ -197,11 +192,6 @@ public class TableOrder extends javax.swing.JFrame {
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(148, 121, 82)));
 
         jCheckBox23.setText("Classic Hot Dog");
-        jCheckBox23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox23ActionPerformed(evt);
-            }
-        });
 
         jCheckBox16.setText("Double Burger");
 
@@ -229,11 +219,6 @@ public class TableOrder extends javax.swing.JFrame {
         txtLamb.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txtLamb.setText("0");
         txtLamb.setLocation(new java.awt.Point(30, 30));
-        txtLamb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtLambActionPerformed(evt);
-            }
-        });
 
         txtPepper.setFont(new java.awt.Font("Arial Black", 1, 13)); // NOI18N
         txtPepper.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -475,6 +460,7 @@ public class TableOrder extends javax.swing.JFrame {
         txtFilter.setText("0");
         txtFilter.setLocation(new java.awt.Point(30, 30));
 
+        receipttext.setBackground(new java.awt.Color(148, 121, 82));
         receipttext.setColumns(20);
         receipttext.setRows(5);
         jScrollPane1.setViewportView(receipttext);
@@ -528,8 +514,7 @@ public class TableOrder extends javax.swing.JFrame {
                                     .addComponent(txtEspresso)
                                     .addComponent(txtCoffee, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jCheckBox9)
-                            .addComponent(jCheckBox17))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addComponent(jCheckBox17))))
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
@@ -619,14 +604,6 @@ public class TableOrder extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCheckBox23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox23ActionPerformed
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
     private void totalbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalbuttonActionPerformed
         CafeItems itemCost = new CafeItems();
         itemCost.setTea(itemCost.getTeanum() * Double.parseDouble(txtTea.getText()));
@@ -686,10 +663,6 @@ public class TableOrder extends javax.swing.JFrame {
     private void exitlabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitlabelMouseClicked
         ExitSystem(); 
     }//GEN-LAST:event_exitlabelMouseClicked
-
-    private void txtLambActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLambActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtLambActionPerformed
 
     private void receiptbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receiptbuttonActionPerformed
         

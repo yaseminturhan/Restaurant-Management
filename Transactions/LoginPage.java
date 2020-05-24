@@ -11,7 +11,6 @@ package Transactions;
  */
 
 import CafeSystem.PosPaymentPage;
-import CafeSystem.UserPage;
 import javax.swing.JOptionPane;
 import java.awt.Toolkit;
 import java.awt.event.*;  
@@ -256,45 +255,18 @@ public class LoginPage extends javax.swing.JFrame {
     private void signButonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signButonActionPerformed
         
            
-        
-        if(getUserName().equals("yasemin") && getPassword().equals("turhan")) {
+       
+                         if(new User().login(getUserName(), getPassword())) {
 				HomePage adminFrame = new HomePage();
+				
 				adminFrame.setVisible(true);
-				dispose();
-			} else if(new User().login(getUserName(), getPassword())) {
-				PosPaymentPage homePage = new PosPaymentPage();
-				dispose();
-				homePage.setVisible(true);
+                                dispose();
 			} else {
 				JOptionPane.showMessageDialog(new JFrame(), "Username or password is wrong!", "Login Error", JOptionPane.ERROR_MESSAGE);
 			
                           
 }    
        
-        
-        /*String nameuser = username.getText();
-        String passuser = pass.getText();
-        
-        if(nameuser.contains("yasemin") && (passuser.contains("turhan"))){
-            
-            System.out.print("Başarılı");
-            username.setText(null);
-            pass.setText(null);
-            systemExit();
-            
-            HomePage homeVisible = new HomePage();
-            homeVisible.setVisible(true);
-            dispose();
-            
-        }
-        
-        else{
-            
-            JOptionPane.showMessageDialog(null, "Invalid Login Details", "ERROR", JOptionPane.ERROR_MESSAGE);
-            username.setText(null);
-            pass.setText(null);
-            
-        }*/
         
         
     }//GEN-LAST:event_signButonActionPerformed

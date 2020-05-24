@@ -5,14 +5,9 @@
  */
 package Model;
 
-import Interfaces.UserInterfaces;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import Model.Global;
-import Model.UserModel;
-import Interfaces.IDao;
-import static java.nio.file.Files.lines;
 import Interfaces.UserInterfaces;
 
 /**
@@ -83,10 +78,6 @@ public class User extends FileModel implements UserInterfaces<UserModel>{
 	}
 
 
-	
-	
-        
-       
     
      public boolean login(String userName, String password) {
 		ArrayList<String> users = super.readLines(FILE_NAME);

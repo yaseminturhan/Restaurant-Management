@@ -6,9 +6,7 @@
 package Service;
 
 import CafeSystem.CafeMenu;
-import Interfaces.CrudInterfaces;
 import Interfaces.MenuInterface;
-import Interfaces.UserInterfaces;
 import Model.FileModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +15,10 @@ import java.util.List;
  *
  * @author yaseminturhan
  */
-public class MenuService extends FileModel implements MenuInterface{
+public class OrderService extends FileModel implements MenuInterface{
     
-    private static final String FILE_NAME= "menu.txt";
+    private static final String FILE_NAME= "userorder.txt";
+   
     
 
     @Override
@@ -83,6 +82,7 @@ public class MenuService extends FileModel implements MenuInterface{
         
     }
 
+  
 
     @Override
     public CafeMenu getById(String id) {
@@ -99,8 +99,9 @@ public class MenuService extends FileModel implements MenuInterface{
     public List<CafeMenu> getByFood(String foods) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
- 
-
+    
+    
     
 }
+
+
