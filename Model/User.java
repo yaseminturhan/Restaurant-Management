@@ -12,6 +12,7 @@ import java.util.List;
 import Model.Global;
 import Model.UserModel;
 import Interfaces.IDao;
+import static java.nio.file.Files.lines;
 import Interfaces.UserInterfaces;
 
 /**
@@ -58,6 +59,7 @@ public class User extends FileModel implements UserInterfaces<UserModel>{
 					attr[3],
 					attr[4],
                                         attr[5]
+                                        
 					
 			);
 			users.add(user);
@@ -82,7 +84,11 @@ public class User extends FileModel implements UserInterfaces<UserModel>{
 
 
 	
-	public boolean login(String userName, String password) {
+	
+        
+       
+    
+     public boolean login(String userName, String password) {
 		ArrayList<String> users = super.readLines(FILE_NAME);
 		for(String line : users) {
 			String[] attr = line.split("___");
@@ -95,7 +101,8 @@ public class User extends FileModel implements UserInterfaces<UserModel>{
 		}
 		return false;
 	}
-
-
+        
+        
+    
 
 }

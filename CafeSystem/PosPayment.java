@@ -11,7 +11,7 @@ import Interfaces.IDao;
  *
  * @author yaseminturhan
  */
-public class PosPayment extends CalculateBilling implements IDao{
+public class PosPayment extends CafeItems implements IDao{
     
     public PosPayment(double taxpercent, double total){
         this.taxpercent = taxpercent;

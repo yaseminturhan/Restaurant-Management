@@ -5,17 +5,17 @@
  */
 package Interfaces;
 
+import CafeSystem.CafeMenu;
+import java.util.List;
+
 /**
  *
  * @author yaseminturhan
  */
-import java.util.List;
-
-public interface UserInterfaces<T> {
+public interface MenuInterface extends CrudInterfaces<CafeMenu> {
     
-	void save(T t,String id);
-	void update(String id, T t);
-	void delete(String id);
-	List<T> getAll();
-        
+    
+    List<CafeMenu> getByDrink(String drinks);
+    List<CafeMenu> getByFood(String foods);
 }
+ 

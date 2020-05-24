@@ -10,8 +10,8 @@ package CafeSystem;
  * @author yaseminturhan
  */
 
-import CafeSystem.CalculateBilling;
-import Home.HomePage;
+import CafeSystem.CafeItems;
+import Transactions.HomePage;
 import Interfaces.IDao;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -628,25 +628,25 @@ public class TableOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void totalbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_totalbuttonActionPerformed
-        CalculateBilling itemCost = new CalculateBilling();
-        itemCost.tea = itemCost.teanum * Double.parseDouble(txtTea.getText());
-        itemCost.coke = itemCost.cokenum * Double.parseDouble(txtCoke.getText());
-        itemCost.juice = itemCost.juicenum * Double.parseDouble(txtJuice.getText());
-        itemCost.coffee = itemCost.coffeenum * Double.parseDouble(txtCoffee.getText());
-        itemCost.icedcoffee = itemCost.icedcoffeenum * Double.parseDouble(txtIcedCoffee.getText());
-        itemCost.espresso = itemCost.espressonum * Double.parseDouble(txtEspresso.getText());
-        itemCost.filtercoffee = itemCost.filtercoffeenum * Double.parseDouble(txtFilter.getText());
+        CafeItems itemCost = new CafeItems();
+        itemCost.setTea(itemCost.getTeanum() * Double.parseDouble(txtTea.getText()));
+        itemCost.setCoke(itemCost.getCokenum() * Double.parseDouble(txtCoke.getText()));
+        itemCost.setJuice(itemCost.getJuicenum() * Double.parseDouble(txtJuice.getText()));
+        itemCost.setCoffee(itemCost.getCoffeenum() * Double.parseDouble(txtCoffee.getText()));
+        itemCost.setIcedcoffee(itemCost.getIcedcoffeenum() * Double.parseDouble(txtIcedCoffee.getText()));
+        itemCost.setEspresso(itemCost.getEspressonum() * Double.parseDouble(txtEspresso.getText()));
+        itemCost.setFiltercoffee(itemCost.getFiltercoffeenum() * Double.parseDouble(txtFilter.getText()));
         
-        itemCost.manti = itemCost.mantinum * Double.parseDouble(txtMantı.getText());
-        itemCost.kebab = itemCost.kebabnum * Double.parseDouble(txtKebab.getText());
-        itemCost.doner = itemCost.donernum * Double.parseDouble(txtDoner.getText());
-        itemCost.chickensalad = itemCost.chickensaladnum * Double.parseDouble(txtChicken.getText());
-        itemCost.lamb = itemCost.lambnum * Double.parseDouble(txtLamb.getText());
-        itemCost.steak = itemCost.steaknum * Double.parseDouble(txtPepper.getText());
-        itemCost.calves = itemCost.calvesnum * Double.parseDouble(txtCalves.getText());
-        itemCost.cburger = itemCost.cburgernum * Double.parseDouble(txtClassic.getText());
-        itemCost.dburger = itemCost.dburgernum * Double.parseDouble(txtDouble.getText());
-        itemCost.chotdog = itemCost.chotdog * Double.parseDouble(txtHot.getText());
+        itemCost.setManti(itemCost.getMantinum() * Double.parseDouble(txtMantı.getText()));
+        itemCost.setKebab(itemCost.getKebabnum() * Double.parseDouble(txtKebab.getText()));
+        itemCost.setDoner(itemCost.getDonernum() * Double.parseDouble(txtDoner.getText()));
+        itemCost.setChickensalad(itemCost.getChickensaladnum() * Double.parseDouble(txtChicken.getText()));
+        itemCost.setLamb(itemCost.getLambnum() * Double.parseDouble(txtLamb.getText()));
+        itemCost.setSteak(itemCost.getSteaknum() * Double.parseDouble(txtPepper.getText()));
+        itemCost.setCalves(itemCost.getCalvesnum() * Double.parseDouble(txtCalves.getText()));
+        itemCost.setCburger(itemCost.getCburgernum() * Double.parseDouble(txtClassic.getText()));
+        itemCost.setDburger(itemCost.getDburgernum() * Double.parseDouble(txtDouble.getText()));
+        itemCost.setChotdog(itemCost.getChotdog() * Double.parseDouble(txtHot.getText()));
         
         double findTaxes; 
         double findSubTotal;

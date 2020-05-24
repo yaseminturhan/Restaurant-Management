@@ -7,7 +7,7 @@
 package CafeSystem;
 
 import CafeSystem.TableOrder;
-import Home.HomePage;
+import Transactions.HomePage;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.text.SimpleDateFormat;

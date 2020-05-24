@@ -15,6 +15,7 @@ public class UserModel extends SaveModel{
 	private String surname;
 	private String username;
 	private String password;
+       
 	
 
 	public UserModel(String name, String surname, String username, String password) {
@@ -23,6 +24,7 @@ public class UserModel extends SaveModel{
 		this.surname = surname;
 		this.username = username;
 		this.password = password;
+                
 		
 	}
 
@@ -32,6 +34,7 @@ public class UserModel extends SaveModel{
 		this.surname = surname;
 		this.username = username;
 		this.password = password;
+               
 		
 	}
 
@@ -66,7 +69,8 @@ public class UserModel extends SaveModel{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+        
+     
 	
 	@Override
 	public String toString() {

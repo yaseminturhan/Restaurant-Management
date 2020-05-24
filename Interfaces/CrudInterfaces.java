@@ -5,17 +5,18 @@
  */
 package Interfaces;
 
+import java.util.List;
+
 /**
  *
  * @author yaseminturhan
  */
-import java.util.List;
-
-public interface UserInterfaces<T> {
+public interface CrudInterfaces<T> {
     
-	void save(T t,String id);
-	void update(String id, T t);
-	void delete(String id);
-	List<T> getAll();
-        
+    void save(T t);
+    void save(T t, String id);
+    void update(String id, T t);
+    void delete(String id);
+    List<T> getAll();
+    T getById(String id);
 }

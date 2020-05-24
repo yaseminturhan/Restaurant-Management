@@ -13,6 +13,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -144,6 +145,42 @@ public class FileModel {
 		}
 		return new FileWriter(file.getAbsoluteFile(), true);
 	}
+
+    public List<String> readLinesByDrink(String FILE_NAME, String description) {
+         ArrayList<String> lines = new ArrayList<>();
+		try {
+			BufferedReader bufferedReader = new BufferedReader(this.getFileReader(FILE_NAME));
+			String line;
+			while((line = bufferedReader.readLine()) != null) {
+				if(line.split("___")[3].equals(description)) {
+					lines.add(line);
+				}
+			}
+			bufferedReader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return lines;
+    }
+    
+        public List<String> readLinesByFood(String FILE_NAME, String type) {
+         ArrayList<String> lines = new ArrayList<>();
+		try {
+			BufferedReader bufferedReader = new BufferedReader(this.getFileReader(FILE_NAME));
+			String line;
+			while((line = bufferedReader.readLine()) != null) {
+				if(line.split("___")[2].equals(type)) {
+					lines.add(line);
+				}
+			}
+			bufferedReader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return lines;
+    }
+    
+    
         
         
 	
